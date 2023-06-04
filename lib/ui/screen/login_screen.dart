@@ -46,7 +46,6 @@ class _LoginScreenState extends State<LoginScreen> {
                 },
               ),
             ),
-
             CommonElevatedButton(
               title: 'LOGIN',
               onTap: () {},
