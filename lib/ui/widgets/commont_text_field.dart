@@ -30,15 +30,15 @@ class CommonTextField extends StatelessWidget {
       decoration: InputDecoration(
         hintText: hintText,
         hintStyle: const TextStyle(color: softGreyColor),
-        contentPadding: const EdgeInsets.symmetric(horizontal: 16, vertical: 4),
+        contentPadding: const EdgeInsets.symmetric(horizontal: 16, vertical: 18),
         border: const OutlineInputBorder(
-          borderSide: BorderSide(color: primaryColor, width: 2),
+          borderSide: BorderSide(color: primaryColor, width: 1),
         ),
         enabledBorder: const OutlineInputBorder(
-          borderSide: BorderSide(color: primaryColor, width: 2),
+          borderSide: BorderSide(color: primaryColor, width: 1),
         ),
         focusedBorder: const OutlineInputBorder(
-          borderSide: BorderSide(color: primaryColor, width: 2),
+          borderSide: BorderSide(color: primaryColor, width: 1),
         ),
       ),
     );

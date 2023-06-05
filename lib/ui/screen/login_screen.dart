@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:task_tracker/ui/screen/otp_verification_screen.dart';
+import 'package:task_tracker/ui/utils/app_colors.dart';
 
 import '../utils/styles.dart';
 import '../widgets/common_elevated_button.dart';
@@ -13,11 +16,13 @@ class LoginScreen extends StatefulWidget {
 }
 
 class _LoginScreenState extends State<LoginScreen> {
+  bool isChecked = false;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.teal,
+        backgroundColor: primaryColor,
         title: Text('Login Screen'),
       ),
       body: Padding(
@@ -46,9 +51,41 @@ class _LoginScreenState extends State<LoginScreen> {
                 },
               ),
             ),
-            CommonElevatedButton(
-              title: 'LOGIN',
-              onTap: () {},
+            Padding(
+              padding: const EdgeInsets.only(top: 80),
+              child: Container(
+                decoration: BoxDecoration(
+                  border: Border.all(color: primaryColor),
+                  borderRadius: BorderRadius.circular(8)
+                ),
+                child: Column(
+                  children: [
+                    Row(
+                      children: [
+                        Checkbox(
+                          checkColor: Colors.white,
+                          value: isChecked,
+                          onChanged: (bool? value) {
+                            setState(() {
+                              isChecked = value!;
+                            });
+                          },
+                        ),
+                        Text('I accept terms & condition')
+                      ],
+                    )
+                  ],
+                ),
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.only(top: 20),
+              child: CommonElevatedButton(
+                title: 'LOGIN',
+                onTap: () {
+                  Get.to(OTPVerificationScreen());
+                },
+              ),
             )
           ],
         ),

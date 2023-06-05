@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:task_tracker/ui/utils/app_colors.dart';
 
 import 'login_screen.dart';
 class HomeScreen extends StatelessWidget {
@@ -9,24 +10,29 @@ class HomeScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.teal,
+        backgroundColor: primaryColor,
         title: const Text('Login Screen'),
       ),
       body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          crossAxisAlignment: CrossAxisAlignment.center,
-          children: [
-            InkWell(
-                onTap: (){
-                  Get.to(LoginScreen());
-                },
-                child: LoginPageCommonBtn(title: 'Login',),),
-            Padding(
-              padding: const EdgeInsets.only(top: 16),
-              child: LoginPageCommonBtn(title: 'Registration',),
-            )
-          ],
+        child: Card(
+          elevation: 10,
+          color: Colors.teal.shade100,
+          margin: const EdgeInsets.only(left: 20, right: 20, top: 150, bottom: 150),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              InkWell(
+                  onTap: (){
+                    Get.to(LoginScreen());
+                  },
+                  child: LoginPageCommonBtn(title: 'Login',),),
+              Padding(
+                padding: const EdgeInsets.only(top: 32),
+                child: LoginPageCommonBtn(title: 'Registration',),
+              )
+            ],
+          ),
         ),
       ),
     );
@@ -43,12 +49,12 @@ class LoginPageCommonBtn extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 16),
+      padding: const EdgeInsets.symmetric(horizontal: 32),
       child: Container(
-        height: 80,
+        height: 70,
         width: double.infinity,
         decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(10), color: Colors.teal),
+            borderRadius: BorderRadius.circular(10), color: primaryColor),
         child: Center(
           child: Text(
             title.toString(),
