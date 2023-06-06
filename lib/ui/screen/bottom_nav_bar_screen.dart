@@ -9,7 +9,7 @@ import 'home_screen.dart';
 import 'second_screen.dart';
 
 class BottomNavBarScreen extends StatelessWidget {
-   BottomNavBarScreen({Key? key}) : super(key: key);
+  BottomNavBarScreen({Key? key}) : super(key: key);
 
   final List<Widget> _screen = const [
     HomeScreen(),
@@ -22,9 +22,7 @@ class BottomNavBarScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: GetBuilder<BottomNavigationBarController>(builder: (controller) {
-        return _screen[
-          controller.selectIndex
-        ];
+        return _screen[controller.selectIndex];
       }),
       bottomNavigationBar:
           GetBuilder<BottomNavigationBarController>(builder: (controller) {
@@ -48,7 +46,7 @@ class BottomNavBarScreen extends StatelessWidget {
               icon: Icon(
                 Icons.home,
               ),
-              label: 'Home',
+              label: 'Company',
             ),
             BottomNavigationBarItem(
               icon: Icon(
