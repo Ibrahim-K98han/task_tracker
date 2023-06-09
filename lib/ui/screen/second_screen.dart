@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 import '../utils/app_colors.dart';
+import 'data_add_screen.dart';
 
 class SecondScreen extends StatelessWidget {
   const SecondScreen({Key? key}) : super(key: key);
@@ -53,7 +55,7 @@ class SecondScreen extends StatelessWidget {
                 child: Column(
                   children: [
                     SizedBox(
-                      height: 550,
+                      height: 450,
                       child: ListView.builder(
                           padding: const EdgeInsets.all(4),
                           itemCount: 10,
@@ -62,17 +64,15 @@ class SecondScreen extends StatelessWidget {
                               padding: const EdgeInsets.all(4),
                               child: Container(
                                   height: 80,
-                                  decoration:
-                                      BoxDecoration(
-                                          color: Colors.white,
-                                        borderRadius: BorderRadius.circular(8)
-                                      ),
-
+                                  decoration: BoxDecoration(
+                                      color: Colors.white,
+                                      borderRadius: BorderRadius.circular(8)),
                                   width: double.infinity,
                                   child: Column(
                                     children: [
                                       Padding(
-                                        padding: const EdgeInsets.only(left: 10),
+                                        padding:
+                                            const EdgeInsets.only(left: 10),
                                         child: Row(
                                           children: [
                                             Icon(Icons.person),
@@ -84,7 +84,8 @@ class SecondScreen extends StatelessWidget {
                                         height: 10,
                                       ),
                                       Padding(
-                                        padding: const EdgeInsets.only(left: 10),
+                                        padding:
+                                            const EdgeInsets.only(left: 10),
                                         child: Row(
                                           children: [
                                             Icon(Icons.call),
@@ -101,6 +102,21 @@ class SecondScreen extends StatelessWidget {
                 ),
               ),
             ),
+            Align(
+              alignment: Alignment.centerRight,
+              child: Padding(
+                padding: const EdgeInsets.only(bottom: 32, right: 16),
+                child: ElevatedButton(
+                    style: ElevatedButton.styleFrom(
+                      backgroundColor: Colors.white,
+                      side: BorderSide(),
+                    ),
+                    onPressed: () {
+                      Get.to(DataAddScreen());
+                    },
+                    child: Text('Add New',style: TextStyle(color: Colors.black),)),
+              ),
+            )
           ],
         ));
   }
