@@ -3,7 +3,6 @@ import 'package:get/get.dart';
 
 import '../utils/app_colors.dart';
 import '../widgets/commont_text_field.dart';
-import '../widgets/custom_text_field.dart';
 
 class DataAddScreen extends StatelessWidget {
   const DataAddScreen({Key? key}) : super(key: key);
